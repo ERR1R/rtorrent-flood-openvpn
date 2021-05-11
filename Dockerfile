@@ -63,7 +63,6 @@ RUN systemctl enable prepare-config.service
 RUN systemctl enable rtorrent.service
 RUN systemctl enable flood.service
 RUN systemctl enable nginx
-RUN systemctl enable dbus-org.freedesktop.resolve1
 
 WORKDIR /root/
 
