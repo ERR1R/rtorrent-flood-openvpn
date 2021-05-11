@@ -3,10 +3,12 @@ Description=PrepareService
 After=network-online.target
 
 [Service]
-Type=notify
+Type=simple
 KillMode=none
 ExecStart=/usr/bin/00-file-cfg.sh
+StandardOutput=null
+StandardError=inherit
 
 [Install]
 RequiredBy=openvpn-own-client.service
-WantedBy=default.target
+WantedBy=multi-user.target
