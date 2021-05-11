@@ -198,6 +198,11 @@ log.open_file = "log", (cfg.logfile)
 log.add_output = "info", "log"
 #log.add_output = "tracker_debug", "log"
 ```
+#### Rflood not working
+```
+Check if you have enabled the Privileged mode for this container
+```
+
 ## Enjoy!
 
 Open the browser and go to:
