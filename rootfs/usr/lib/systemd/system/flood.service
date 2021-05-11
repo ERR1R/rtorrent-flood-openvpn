@@ -4,14 +4,14 @@ After=network-online.target openvpn-own-client.service rtorrent.service
 
 [Service]
 WorkingDirectory=/opt/flood
-ExecStart=/usr/bin/npm start
+ExecStart=flood
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
 SyslogIdentifier=notell
 User=rtorrent
 Group=rtorrent
-Environment=NODE_ENV=production
+#Environment=NODE_ENV=production
 
 [Install]
 WantedBy=multi-user.target
