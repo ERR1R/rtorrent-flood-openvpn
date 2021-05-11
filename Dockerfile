@@ -36,14 +36,14 @@ RUN yum -y install gcc-c++ make #dnf-plugins-core
 RUN yum install -y 'dnf-command(config-manager)' 
 RUN yum config-manager --set-enabled powertools
 RUN yum -y install mediainfo libmediainfo mediainfo-gui
-RUN curl -sL https://rpm.nodesource.com/setup_16.x | bash -
+RUN curl -fsSL https://rpm.nodesource.com/setup_16.x | bash -
 RUN yum install -y nodejs git
 RUN git clone https://github.com/jesec/flood.git /opt/flood
 RUN cp /defaults/config/flood/config.js /opt/flood/config.js
 WORKDIR /opt/flood/
-RUN npm install
-RUN npm install -g node-gyp
-RUN npm run build
+RUN npm install --global flood
+#RUN npm install -g node-gyp
+#RUN npm run build
 # RUN useradd flood -d /home/flood -G wheel
 RUN chown -R rtorrent:rtorrent /opt/flood/
 
