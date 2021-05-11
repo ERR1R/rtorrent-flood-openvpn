@@ -36,3 +36,4 @@ chmod 775 -R /output
 chown rtorrent:rtorrent -R /output
 chown rtorrent:rtorrent -R /config/rtorrent
 chown rtorrent:rtorrent -R /config/flood
+chown -R root:root /config/vpn
