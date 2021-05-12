@@ -45,6 +45,7 @@ RUN npm install --global flood
 #RUN npm install -g node-gyp
 #RUN npm run build
 # RUN useradd flood -d /home/flood -G wheel
+RUN ln -s /default/config/flood /config/flood
 RUN chown -R rtorrent:rtorrent /opt/flood/
 
 # nginx
