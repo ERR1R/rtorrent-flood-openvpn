@@ -11,7 +11,7 @@ StandardError=syslog
 SyslogIdentifier=notell
 User=rtorrent
 Group=rtorrent
-#Environment=NODE_ENV=production
+Environment=FLOOD_OPTION_baseuri=/flood
 
 [Install]
 WantedBy=multi-user.target
