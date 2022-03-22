@@ -1,4 +1,4 @@
-FROM amd64/centos:latest
+FROM amd64/rockylinux:8.5
 
 # Enabled systemd
 ENV container docker
