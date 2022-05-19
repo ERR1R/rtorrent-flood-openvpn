@@ -31,11 +31,11 @@ network.port_random.set = no
 
 
 # Check the hash after the end of the download
-check_hash = yes
+check_hash = no
 
 # Enable DHT (for torrents without trackers)
-dht = auto
-dht_port = 6881
+#dht = auto
+#dht_port = 6881
 #peer_exchange = yes
 
 # Authorize UDP trackers
