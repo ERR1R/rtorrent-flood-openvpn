@@ -1,8 +1,7 @@
 # rTorrent + FloodUI + OpenVPN
 Docker container for rTorrent + FloodUI with integrated OpenVPN client.
 
-It is based on the latest CentOS docker image:
-- https://hub.docker.com/_/centos
+It is based on the Rockylinux 8.5 docker image:
 
 ## What does this image?
 The container connects at startup during the boot process to the OpenVPN service of your choice. After the OpenVPN client connected successfully, the rTorrent and FloodUI service will startup.
@@ -12,7 +11,10 @@ The container connects at startup during the boot process to the OpenVPN service
 ## Install instructions
 
 ### Important
-Login: Torrent:Torrent
+Go to http://host:8000/flood and use
+
+User: Torrent
+Password: Torrent
 Connect: 127.0.0.1:5000
 
 > In case it doesn't auto connect....
@@ -36,11 +38,13 @@ The OpenVPN service will be verified every 60s. If it's not running anymore it w
 To get the docker up and running execute fhe following command:
 
 ```
-sudo docker run -it --privileged --name rtorrent-flood-openvpn -v /path/to/config:/config -v /path/to/output:/output -d -p 8000:80 -p 8080:8080 h1f0x/rtorrent-flood-openvpn
+sudo docker run -it --privileged --name rtorrent-flood-openvpn -v /path/to/config:/config -v /path/to/output:/output -d -p 8000:80 -p 8080:8080 err1r/rtorrent-flood-openvpn
 ```
 > If not done already, deploy or modify the OpenVPN client.conf at /path/to/config/vpn
 
 ```
+After your changes restart the container.
+
 docker restart rtorrent-flood-openvpn
 ```
 
@@ -107,17 +111,7 @@ network.port_random.set = no
 ```
 #### Check the hash after the end of the download
 ```
-check_hash = yes
-```
-#### Enable DHT (for torrents without trackers)
-```
-dht = auto
-dht_port = 6881
-peer_exchange = yes
-```
-#### Authorize UDP trackers
-```
-use_udp_trackers = yes
+check_hash = no
 ```
 #### Peer settings
 ```
@@ -207,4 +201,4 @@ Check if you have enabled the Privileged mode for this container
 
 Open the browser and go to:
 
-> http://localhost:8000
+> http://localhost:8000/flood
