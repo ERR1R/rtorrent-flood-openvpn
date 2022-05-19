@@ -32,8 +32,8 @@ fi
 
 chmod 775 -R /config
 chmod 775 -R /output
-systemctl enable dbus-org.freedesktop.resolve1
-systemctl start dbus-org.freedesktop.resolve1
+systemctl enable systemd-resolved.service
+systemctl start systemd-resolved.service
 chown rtorrent:rtorrent -R /output
 chown rtorrent:rtorrent -R /config/rtorrent
 chown rtorrent:rtorrent -R /config/flood
