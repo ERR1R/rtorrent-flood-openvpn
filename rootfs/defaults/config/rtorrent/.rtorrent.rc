@@ -31,16 +31,7 @@ network.port_random.set = no
 
 
 # Check the hash after the end of the download
-check_hash = no
-
-# Enable DHT (for torrents without trackers)
-#dht = auto
-#dht_port = 6881
-#peer_exchange = yes
-
-# Authorize UDP trackers
-#use_udp_trackers = yes
-
+check_hash = yes
 
 ## Peer settings
 throttle.max_uploads.set = 100
